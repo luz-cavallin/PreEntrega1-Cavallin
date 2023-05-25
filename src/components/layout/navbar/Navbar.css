@@ -1,0 +1,28 @@
+.containerNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.containerNavbar h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.containerNavbar ul {
+  list-style-type: none;
+  text-align: center;
+}
+.containerNavbar li {
+  display: inline;
+  text-align: center;
+  margin: 0 15px 0 0;
+}
+.containerNavbar ul li .boton {
+  background-color: beige;
+  color: steelblue;
+  border-radius: 0px 50% 0px 50%;
+  border-style: none;
+  font-size: 20px;
+  list-style-type: none;
+}
