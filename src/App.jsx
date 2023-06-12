@@ -1,11 +1,11 @@
 import Navbar from "./components/layout/navbar/Navbar";
-import { ItemProductsList } from "../src/components/pages/ItemProdutcsList/ItemProductsList";
+import ItemsProductsListContainer from "./components/pages/ItemProdutcsList/ItemProductsListContainer";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <ItemProductsList greeting={"Bienvenidos"} />
+      <ItemsProductsListContainer greeting={"Bienvenidos"} />
     </div>
   );
 };
