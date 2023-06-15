@@ -1,34 +1,27 @@
-import "./Navbar.css";
-import CartWidjet from "../../common/CartWidget/CartWidjet";
+import { Badge } from "@mui/material";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import styles from "./Navbar.module.css";
+
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="containerNavbar">
-      <h4>Vinoteca Sierras Chicas</h4>
-      <ul>
-        <li>
-          <a href="#" className="boton">
-            Todos
-          </a>
-        </li>
-        <li>
-          <a href="#" className="boton">
-            Malbec
-          </a>
-        </li>
-        <li>
-          <a href="#" className="boton">
-            Cabernet
-          </a>
-        </li>
-        <li>
-          <a href="#" className="boton">
-            Syrah
-          </a>
-        </li>
-      </ul>
-      <CartWidjet />
-    </div>
+    <>
+      <div className={styles.containerNavbar}>
+        <Link to="/">Vinoteca Sierras Chicas</Link>
+        <ul className={styles.categories}>
+          <Link to="/">Limpiar filtros</Link>
+          <Link to="/category/Malbec">Malbec</Link>
+          <Link to="/category/Syrah">Syrah</Link>
+        </ul>
+
+        <Link to="/carrito">
+          <Badge badgeContent={4} color="primary">
+            <BsFillCartCheckFill size="30px" />
+          </Badge>
+        </Link>
+      </div>
+    </>
   );
 };
 

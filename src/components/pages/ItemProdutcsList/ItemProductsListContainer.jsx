@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
-import ItemProductsListPresentacional from "./ItemProductsListPresentacional";
 import { products } from "../../../productsMock";
-const ProductsListContainer = () => {
+import { useParams } from "react-router";
+import ItemProductsListPresentacional from "./ItemProductsListPresentacional";
+
+const ItemProductsListContainer = () => {
   const [items, setItems] = useState([]);
 
+  const { categoryName } = useParams();
+
   useEffect(() => {
-    const tarea = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(products); //resolve ese arreglo de productos
-      }, 1000);
-      // reject( "la promesa salio mal ")
+
+    let productosFiltrados = products.filter(
+      (product) => product.category === categoryName
+    );
+
+    const tarea = new Promise((resolve) => {
+      resolve(categoryName ? productosFiltrados : products);
     });
 
     tarea
@@ -18,20 +24,9 @@ const ProductsListContainer = () => {
         console.log(rechazo);
       });
 
-    // ASYNC - AWAIT
-    // const getData = async () => {
-    //   try {
-    //     let res = await tarea;
-    //     setFrase(res);
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-    // };
+  }, [categoryName]);
 
-    // getData();
-  }, []);
+  return <ItemProductsListPresentacional items={items}/>
+}
 
-  return <ItemProductsListPresentacional items={items} />; //le paso el estado items al presentacional, lo que tiene adentro es el estado items
-};
-
-export default ProductsListContainer;
+export default ItemProductsListContainer

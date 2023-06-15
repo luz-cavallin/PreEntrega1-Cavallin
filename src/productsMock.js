@@ -2,65 +2,65 @@ export const products = [
   {
     id: 1,
 
-    title: "Nike 360",
+    title: "Rutini",
 
-    price: 15000,
+    price: 8500,
 
-    stock: 2,
+    stock: 3,
 
-    description: "Estas son las mejores zapatillas",
+    description: "Estructura concentrada con taninos suaves y sucrosos",
 
-    category: "deportivas",
+    category: "Malbec",
 
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669326932/free-metcon-4-zapatillas-de-entrenamiento-TQMCZg_fvia3m.png",
+    img: "https://res.cloudinary.com/deuyxmr7n/image/upload/v1686855244/vinoteca/thumb_62006_default_big_ymq4tw.jpg",
   },
 
   {
     id: 2,
 
-    title: "wilson advance",
+    title: "Pyros Appellation",
 
-    price: 14500,
+    price: 3500,
 
     stock: 5,
 
-    description: "Ultra livianas y cuentan con camara de aire",
+    description: "Buena estructura con taninos dulces y sedosos",
 
-    category: "deportivas",
+    category: "Syrah",
 
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg",
+    img: "https://res.cloudinary.com/deuyxmr7n/image/upload/v1686855330/vinoteca/thumb_61235_default_big_mioloo.jpg",
   },
 
   {
     id: 3,
 
-    title: "Puma",
+    title: "DV Catena",
 
-    price: 19000,
+    price: 8800,
 
     stock: 5,
 
-    description:
-      "Las clasicas zapatillas que van para cualquier momento del dia",
+    description: " Aromas a cerezas negras maduras yrefrescante ",
 
-    category: "urbanas",
+    category: "Cabernet",
 
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg",
+    img: "https://res.cloudinary.com/deuyxmr7n/image/upload/v1686855966/vinoteca/thumb_53323_default_big_nubxgt.jpg",
   },
 
   {
     id: 4,
 
-    title: "Jaguar",
+    title: "Saurus",
 
-    price: 17800,
+    price: 3500,
 
-    stock: 5,
+    stock: 3,
 
-    description: "Zapatillas de ultima generacion para el deporte",
+    description:
+      "Frutal con taninos dulces, de cuerpo medio y acidez moderada.",
 
-    category: "urbanas",
+    category: "Pinot Noir",
 
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg",
+    img: "https://res.cloudinary.com/deuyxmr7n/image/upload/v1686856005/vinoteca/thumb_62572_default_big_shqpae.jpg",
   },
 ];
