@@ -1,7 +1,5 @@
 export const products = [
   {
-    id: 1,
-
     title: "Rutini",
 
     price: 8500,
@@ -16,8 +14,6 @@ export const products = [
   },
 
   {
-    id: 2,
-
     title: "Pyros Appellation",
 
     price: 3500,
@@ -32,8 +28,6 @@ export const products = [
   },
 
   {
-    id: 3,
-
     title: "DV Catena",
 
     price: 8800,
@@ -48,8 +42,6 @@ export const products = [
   },
 
   {
-    id: 4,
-
     title: "Saurus",
 
     price: 3500,

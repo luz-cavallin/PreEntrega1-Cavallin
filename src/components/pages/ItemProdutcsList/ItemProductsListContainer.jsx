@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router";
 import ItemProductsListPresentacional from "./ItemProductsListPresentacional";
+import { db } from "../../../config";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { ScaleLoader } from "react-spinners";
 
 const ItemProductsListContainer = () => {
   const [items, setItems] = useState([]);
@@ -9,24 +11,47 @@ const ItemProductsListContainer = () => {
   const { categoryName } = useParams();
 
   useEffect(() => {
+    let itemCollection = collection(db, "item");
+    let consulta;
 
-    let productosFiltrados = products.filter(
-      (product) => product.category === categoryName
-    );
+    if (categoryName) {
+      // los filtrados
+      consulta = query(itemCollection, where("category", "==", categoryName));
+    } else {
+      // todos
+      consulta = itemCollection;
+    }
 
-    const tarea = new Promise((resolve) => {
-      resolve(categoryName ? productosFiltrados : products);
-    });
-
-    tarea
-      .then((respuesta) => setItems(respuesta))
-      .catch((rechazo) => {
-        console.log(rechazo);
-      });
-
+    getDocs(consulta)
+      .then((res) => {
+        let products = res.docs.map((elemento) => {
+          return {
+            ...elemento.data(),
+            id: elemento.id,
+          };
+        });
+        setItems(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
 
-  return <ItemProductsListPresentacional items={items}/>
-}
+  if (items.length === 0) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "90vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ScaleLoader color="steelblue" width={40} height={111} />
+      </div>
+    );
+  }
 
-export default ItemProductsListContainer
+  return <ItemProductsListPresentacional items={items} />;
+};
+
+export default ItemProductsListContainer;

@@ -1,34 +1,24 @@
 import Layout from "./components/layout/Layout";
-
-import CartContainer from "./components/pages/cart/CartContainer";
-import ItemsProductsListContainer from "./components/pages/ItemProdutcsList/ItemProductsListContainer";
-import ProductDetailContainer from "./components/pages/productDetail/ProductDetailContainer";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { menuRoutes } from "./routes/menuRoutes";
+import CartContextProvider from "./context/CartContext";
+
 const App = () => {
   return (
-    
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<ItemsProductsListContainer />} />
+      <CartContextProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            {menuRoutes.map(({ id, path, Element }) => (
+              <Route key={id} path={path} element={<Element />} />
+            ))}
+          </Route>
 
-          <Route path="/category/:categoryName" element={<ItemsProductsListContainer />} />
-
-          <Route path="/itemDetail/:id" element={<ProductDetailContainer />} />
-          
-          <Route path="/carrito" element={<CartContainer />} />
-        </Route>
-
-        <Route path="*" element={<h1>404 not found</h1>} />
-      </Routes>
+          <Route path="*" element={<h1>404 not found</h1>} />
+        </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
 };
 
 export default App; // la estoy exportando y en el archivo main la estoy ejecutando
-{/* <div>
-      <Navbar />
-      <ItemsProductsListContainer greeting={"Bienvenidos"} />
-      <ProductDetailContainer />
-    </div> */}

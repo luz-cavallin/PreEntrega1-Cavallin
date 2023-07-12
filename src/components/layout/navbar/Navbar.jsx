@@ -3,20 +3,28 @@ import { BsFillCartCheckFill } from "react-icons/bs";
 import styles from "./Navbar.module.css";
 
 import { Link } from "react-router-dom";
+import { menuNavigate } from "../../../routes/menuNavigate";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
 const Navbar = () => {
+  const { getTotalItems } = useContext(CartContext);
+  const totalItems = getTotalItems();
+
   return (
     <>
       <div className={styles.containerNavbar}>
         <Link to="/">Vinoteca Sierras Chicas</Link>
         <ul className={styles.categories}>
-          <Link to="/">Limpiar filtros</Link>
-          <Link to="/category/Malbec">Malbec</Link>
-          <Link to="/category/Syrah">Syrah</Link>
+          {menuNavigate.map(({ id, path, title }) => (
+            <Link key={id} to={path}>
+              {title}
+            </Link>
+          ))}
         </ul>
 
         <Link to="/carrito">
-          <Badge badgeContent={4} color="primary">
+          <Badge badgeContent={totalItems} showZero color="primary">
             <BsFillCartCheckFill size="30px" />
           </Badge>
         </Link>
