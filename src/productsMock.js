@@ -51,7 +51,7 @@ export const products = [
     description:
       "Frutal con taninos dulces, de cuerpo medio y acidez moderada.",
 
-    category: "Pinot Noir",
+    category: "PinotNoir",
 
     img: "https://res.cloudinary.com/deuyxmr7n/image/upload/v1686856005/vinoteca/thumb_62572_default_big_shqpae.jpg",
   },

@@ -9,11 +9,6 @@ const Form = () => {
   const handleSubmit = (evento) => {
     evento.preventDefault();
 
-    // if( !userData.lastName.includes("@")){
-    //     console.log("el campo email no es valido")
-    //     return
-    // }
-
     if (userData.name.length < 2) {
       console.log("El nombre no puede ser menor a 3");
       return;

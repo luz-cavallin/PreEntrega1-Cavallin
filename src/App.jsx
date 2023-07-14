@@ -21,4 +21,4 @@ const App = () => {
   );
 };
 
-export default App; // la estoy exportando y en el archivo main la estoy ejecutando
+export default App; 

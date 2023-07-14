@@ -15,7 +15,11 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                   <h2>${item.price}.-</h2>
                   <h2>Unidades: {item.quantity}</h2>
                 </div>
-                <Button variant="contained" onClick={() => removeById(item.id)}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => removeById(item.id)}
+                >
                   Quitar
                 </Button>
               </div>
@@ -30,16 +34,20 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
           <h3>Precio final: </h3>
           {cart.length > 0 ? (
             <div className="btn-cart">
-              <Button onClick={limpiar} variant="contained">
+              <Button onClick={limpiar} variant="contained" color="secondary">
                 Vaciar carrito
               </Button>
               <Link to="/checkout">
-                <Button variant="contained">Finalizar compra</Button>
+                <Button variant="contained" color="secondary">
+                  Finalizar compra
+                </Button>
               </Link>
             </div>
           ) : (
             <Link to="/">
-              <Button variant="contained">Agrega productos</Button>
+              <Button variant="contained" color="secondary">
+                Agrega productos
+              </Button>
             </Link>
           )}
 

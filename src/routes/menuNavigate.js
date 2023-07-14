@@ -2,7 +2,7 @@ export const menuNavigate = [
   {
     id: "home",
     path: "/",
-    title: "Limpiar filtros",
+    title: "Home",
   },
   {
     id: "malbec",
@@ -13,5 +13,10 @@ export const menuNavigate = [
     id: "syrah",
     path: "/category/Syrah",
     title: "Syrah",
+  },
+  {
+    id: "cabernet",
+    path: "/category/Cabernet",
+    title: "Cabernet",
   },
 ];

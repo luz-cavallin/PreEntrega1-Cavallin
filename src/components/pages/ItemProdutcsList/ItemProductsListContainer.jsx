@@ -46,7 +46,12 @@ const ItemProductsListContainer = () => {
           alignItems: "center",
         }}
       >
-        <ScaleLoader color="steelblue" width={40} height={111} />
+        <ScaleLoader
+          color="#7F669D"
+          width={40}
+          height={111}
+          justifyContent="center"
+        />
       </div>
     );
   }

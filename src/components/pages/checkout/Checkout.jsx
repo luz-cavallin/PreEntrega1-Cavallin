@@ -8,6 +8,7 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           label="Name"
           variant="outlined"
           name="name"
+          color="secondary"
           onChange={handleChange}
           helperText={errors.name}
           error={errors.name ? true : false}
@@ -16,6 +17,7 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           label="Email"
           variant="outlined"
           name="email"
+          color="secondary"
           onChange={handleChange}
           helperText={errors.email}
           error={errors.email ? true : false}
@@ -24,11 +26,12 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           label="Phone"
           variant="outlined"
           name="phone"
+          color="secondary"
           onChange={handleChange}
           helperText={errors.phone}
           error={errors.phone ? true : false}
         />
-        <Button variant="outlined" type="submit">
+        <Button variant="outlined" color="secondary" type="submit">
           Comprar
         </Button>
       </form>

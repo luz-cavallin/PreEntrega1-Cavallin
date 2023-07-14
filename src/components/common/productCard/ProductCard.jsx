@@ -37,6 +37,7 @@ const ProductCard = ({ elemento }) => {
         <Link to={`/itemDetail/${elemento.id}`}>
           <Button
             variant="contained"
+            color="secondary"
             size="small"
             sx={{ textTransform: "none" }}
           >

@@ -1,16 +1,10 @@
-import { Badge } from "@mui/material";
-import { BsFillCartCheckFill } from "react-icons/bs";
 import styles from "./Navbar.module.css";
 
 import { Link } from "react-router-dom";
 import { menuNavigate } from "../../../routes/menuNavigate";
-import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import CartWidget from "../../common/cartWidget/CartWidget";
 
 const Navbar = () => {
-  const { getTotalItems } = useContext(CartContext);
-  const totalItems = getTotalItems();
-
   return (
     <>
       <div className={styles.containerNavbar}>
@@ -22,12 +16,7 @@ const Navbar = () => {
             </Link>
           ))}
         </ul>
-
-        <Link to="/carrito">
-          <Badge badgeContent={totalItems} showZero color="primary">
-            <BsFillCartCheckFill size="30px" />
-          </Badge>
-        </Link>
+        <CartWidget />
       </div>
     </>
   );

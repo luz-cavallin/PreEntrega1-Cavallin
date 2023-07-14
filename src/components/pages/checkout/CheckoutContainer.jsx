@@ -21,8 +21,6 @@ const CheckoutContainer = () => {
     },
 
     onSubmit: (data) => {
-      // ACA MANEJAMOS LA LOGICA DE LO QUE QUEREMOS HACER CUANDO SE ENVIE EL FORM
-
       let order = {
         buyer: data,
         items: cart,

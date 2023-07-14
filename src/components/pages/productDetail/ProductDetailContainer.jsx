@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import ProductDetail from "./ProductDetail";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
 import { db } from "../../../config";
 import { collection, getDoc, doc } from "firebase/firestore";
-import Swal from "sweetalert2";
+import { ScaleLoader } from "react-spinners";
 
 const ProductDetailContainer = () => {
   const [productSelected, setProductSelect] = useState({});
@@ -25,7 +26,7 @@ const ProductDetailContainer = () => {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "Producto agregado al carrito",
+      title: "Producto agregado exitosamente",
       showConfirmButton: true,
       timer: 1500,
     });
@@ -49,7 +50,12 @@ const ProductDetailContainer = () => {
           onAdd={onAdd}
         />
       ) : (
-        <h1>Cargando...</h1>
+        <ScaleLoader
+          color="#7F669D"
+          width={40}
+          height={111}
+          justifyContent="center"
+        />
       )}
     </div>
   );

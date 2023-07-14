@@ -17,7 +17,6 @@ const CartContainer = () => {
       confirmButtonText: "Si :(",
       denyButtonText: `No :)`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         clearCart();
         Swal.fire("Carrito limpio", "", "success");
