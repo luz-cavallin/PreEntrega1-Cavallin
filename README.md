@@ -8,18 +8,18 @@
 Se trabajo con Html, Css, JavaScript y React JS
 
 ### Librerias utilizadas
-[React Icons](https://react-icons.github.io/react-icons/),
-[React Spinners](https://www.npmjs.com/package/react-spinners),
-[React Router Dom](https://reactrouter.com/en/main),
-[MUI material](https://mui.com/),
-[SweetAlert2](https://sweetalert2.github.io/),
-[Formik, Yup](https://formik.org/docs/overview)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Spinners](https://www.npmjs.com/package/react-spinners)
+- [React Router Dom](https://reactrouter.com/en/main)
+- [MUI material](https://mui.com/)
+- [SweetAlert2](https://sweetalert2.github.io/)
+- [Formik, Yup](https://formik.org/docs/overview)
 
 Se trabajo con Firebase para almacenamiento de datos y ordenes de compra
 
 
 
-#### Para clonar el proyecto de manera local ejecute
+### Para clonar el proyecto de manera local ejecute
 ```
-git clone link de repo
+git clone https://github.com/luz-cavallin/ProyectoFinal-Cavallin.git
 ```
